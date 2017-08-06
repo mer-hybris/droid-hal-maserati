@@ -2,6 +2,13 @@
 %define device maserati
 %define vendor motorola
 %define vendor_pretty Motorola
-%define device_pretty Droid4
+%define device_pretty Droid 4
 %define installable_zip 1
+%define makefstab_skip_entries /tmp /system
+%define enable_kernel_update 1
+
+%define additional_post_scripts \
+/usr/bin/groupadd-user media_rw || :\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
